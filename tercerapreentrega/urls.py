@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from miBlog.views import index
+from miBlog.views import (index, mostrar_alumnos, mostrar_profesor, registrar_alumno, registrar_profesor)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",index),
+    path("alumnos",mostrar_alumnos,name="alumnos"),
+    path("alumnos/registrar", registrar_alumno,name="registrar-alumnos"),
+    path("profesores",mostrar_profesor,name="profesores"),
+    path("profesores/registrar", registrar_profesor,name="registrar-profesor"),
 ]
