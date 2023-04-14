@@ -10,7 +10,7 @@
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
                         <h3>Registrar Alumno</h3>
-                        <form action="{% url 'alumnos-registro'%}" method="POST">
+                        <form action="" method="POST">
                             {% csrf_token %}
                             {{form.as_p}}  
                             <input type="submit" value="Registrar">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-lg-4">
                         <h3>Lista de alumnos</h3>
-                        <ul>{% for alumno in alumnos %}
+                        <ul>{% for alumnos in context %}
                             <li>{{alumno}}<li>
                             {% endfor %}
                         <ul>

@@ -8,10 +8,8 @@ def index(request):
 
 def mostrar_alumnos(request):
     alumnos = Alumno.objects.all()
-    context = {
-        "alumnos":alumnos,
-        "form":AlumnoForm(),
-    }
+    context = {"alumnos":alumnos,
+               "form": AlumnoForm()}
     return render(request,"miBlog/alumnos.html",context)
 
 def registrar_alumno(request):
@@ -28,10 +26,9 @@ def registrar_alumno(request):
 
 def mostrar_profesor(request):
     profesores = Profesor.objects.all()
-    context = {
-        "profesores":profesores,
-        "form":ProfesorForm(),
-    }
+    context = {"profesores":profesores,
+               "form": ProfesorForm()}
+   
     return render(request,"miBlog/profesores.html",context)
 
 def registrar_profesor(request):
@@ -45,4 +42,4 @@ def registrar_profesor(request):
 
     context["profesores"] = Profesor.objects.all()
     return render(request,"miBlog/profesores.html",context)
-# Create your views here.
+
