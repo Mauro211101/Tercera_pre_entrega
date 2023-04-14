@@ -9,8 +9,8 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                        <h3>Registrar Alumno</h3>
-                        <form action="" method="POST">
+                        <h3>Registrar Materia</h3>
+                        <form action="{% url 'materias-registro'%}" method="POST">
                             {% csrf_token %}
                             {{form.as_p}}  
                             <input type="submit" value="Registrar">
@@ -20,10 +20,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                        <h3>Lista de alumnos</h3>
-                        <ul>{% for alumnos in context %}
-                            <li>{{alumno}}<li>
+                        <h3>Lista de materias</h3>
+                        {% if materias %}
+                        <ul>{% for materia in materias %}
+                            <li>{{materia}}<li>
                             {% endfor %}
+                            {% endif %}
                         <ul>
                     </div>
                 </div>

@@ -21,9 +21,12 @@
                 </div>
                 <div class="col-lg-4">
                         <h3>Lista de alumnos</h3>
+                        {% if alumnos %}
                         <ul>{% for alumno in alumnos %}
+                            <br><br>
                             <li>{{alumno}}<li>
                             {% endfor %}
+                            {% endif %}
                         <ul>
                     </div>
                 </div>
